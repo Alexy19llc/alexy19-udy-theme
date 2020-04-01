@@ -1,0 +1,23 @@
+{%- capture items -%}
+{%- for item in pagination.items -%}
+<div class="w-dyn-item">
+                  <a href="#" class="post-card w-inline-block">
+                    <div class="post-card-image">
+                      <div class="post-card-icon"></div>
+                    </div>
+                    <div class="post-card-content">
+                      <div class="post-card-info">
+                        <div class="w-hidden-tiny"></div>
+                        <div class="w-hidden-tiny">&nbsp;in&nbsp;</div>
+                        <div class="post-card-category"></div>
+                      </div>
+                      <h4 class="post-card-heading"></h4>
+                    </div>
+                  </a>
+                </div>
+{%- endfor -%}
+{%- endcapture -%}
+{
+  "itemsHTML": {{ items | json: true }},
+  "href": {{pagination.href | json }}
+}
